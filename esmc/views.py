@@ -11,7 +11,8 @@ def index(request):
     return render(request,"index.html")
 
 def ajax(request):
-    data = DriverTask.objects.order_by("dateCreated").filter(status = ).all()
+    #status =
+    data = DriverTask.objects.order_by("dateCreated").exclude(status__name__exact = "completed").all()
     return HttpResponse(serializers.serialize("json", data, use_natural_foreign_keys=True), content_type="application/json", charset = "UTF-8")
 
 @csrf_exempt
