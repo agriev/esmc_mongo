@@ -1,17 +1,19 @@
 $(function(){
-	var activeTask = null;
+	var activeTaskId = null;
 
 	var checkActiveTask = function() {
 
-		if(activeTask == null) {
+		if(activeTaskId == null) {
 			updateDOMforFetching()
 		}
 
-		$.get('', function( data ) {
-      updateDOMforTaskContainer(data)
+		$.get('/ajax', function( data ) {
+			data = data.slice(-1)[0];
+      updateDOMforTaskContainer(data.pk, data.fields);
     })
     .fail(function() {
     	updateDOMforError()
+    	console.log('shit')
   	});
 	};
 
@@ -29,14 +31,17 @@ $(function(){
 		$('#taskFetching').hide();
 	}
 
-	var updateDOMforTaskContainer = function(taskId) {
+	var updateDOMforTaskContainer = function(taskId, data) {
 		if(taskId == null) {
 			$('#taskNotask').show();
 			$('#taskActive').hide();
 		}
-		else {
+		else if(taskId != activeTaskId) {
+			$('#newTaskModal').modal();
 			$('#taskNotask').hide();
 			$('#taskActive').show();
+			activeTaskId = taskId;
+			updateDOMforActiveTask(data)
 		}
 		$('#taskFetchError').hide();
 		$('#taskFetching').hide();

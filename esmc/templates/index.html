@@ -28,15 +28,15 @@
     		<h2>Получаем задание...</h2>
     	</div>
 
-    	<div id="taskNotask" class="hide">
+    	<div id="taskNotask" style="display:none;">
     		<h2>Нет заданий</h2>
     	</div>
 
-    	<div id="taskFetchError" class="hide">
+    	<div id="taskFetchError" style="display:none;">
     		<h2>Ошибка при получении задания</h2>
     	</div>
 
-      <div class="task-active hide" id="taskActive">
+      <div class="task-active" id="taskActive" style="display:none;">
         <h2 id="taskRouteName">Маршрут из ебеней в хуилово</h2>
         <p id="taskTime">Сегодня с 9:00 до 14:00</p>
         <p class="text-muted" id="taskTechOp">Полить говном</p>
@@ -52,6 +52,25 @@
 
       </div>
       <div class="col-xs-8 map-container" id="map">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="newTaskModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Вам поступило новое задание</h4>
+        </div>
+        <div class="modal-body">
+          <p id="newTaskRouteName"></p>
+          <p id="newTaskTime"></p>
+          <p id="newTaskTechOp"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Принять</button>
+        </div>
       </div>
     </div>
   </div>
