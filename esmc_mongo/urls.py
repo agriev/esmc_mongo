@@ -19,6 +19,7 @@ from esmc import views
 
 urlpatterns = [
     url(r'^$', views.index, name = 'index'),
+    url(r'^ajax/', views.ajax, name = 'ajax'),
     url(r'^admin/', admin.site.urls),
 ]
 from django.conf import settings
