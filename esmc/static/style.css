@@ -16,7 +16,15 @@ body {
 body {
   background-color:#343434;
   margin-top:50px;
-  color:#fff;
+  overflow:hidden;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
 }
 
 h1 {
@@ -91,6 +99,7 @@ header .hide-completed {
 
 .container-driver {
   background-color:#343434;
+  color:#fff;
 }
 
 .navbar-inverse {
@@ -104,12 +113,14 @@ header .hide-completed {
 }
 
 .map-container {
-  height: 400px;
+  /*min-height: 400px;*/
   padding:0;
 }
 
 .task-active {
   color:#fff;
+  overflow-y:auto;
+  margin-bottom:20px;
 }
 .task-active h2 {
   font-size:18px;

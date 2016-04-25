@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
   <title>Title</title>
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 	<!-- Custom -->
-  <link rel="stylesheet" href="../static/style.css" type="text/css"></style>
+  <link rel="stylesheet" href="/static/style.css" type="text/css"></style>
 </head>
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
+<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+  <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Мои задания</a>
     </div>
@@ -37,15 +39,11 @@
     	</div>
 
       <div class="task-active" id="taskActive" style="display:none;">
-        <h2 id="taskRouteName">Маршрут из ебеней в хуилово</h2>
-        <p id="taskTime">Сегодня с 9:00 до 14:00</p>
-        <p class="text-muted" id="taskTechOp">Полить говном</p>
-        <ol class="odhs" id="taskOdhList">
-          <li>Мамоновский пер.</li>
-          <li>Тверская ул.</li>
-          <li>Новопушкинский сквер</li>
-        </ol>
-        <p class="text-muted" id="taskComment">Лей хорошо, сука</p>
+        <h2 id="taskRouteName"></h2>
+        <p id="taskDate"></p>
+        <p class="text-muted" id="taskTechOp"></p>
+        <ol class="odhs" id="taskOdhList"></ol>
+        <p class="text-muted" id="taskComment"></p>
 
         <button class="btn btn-md btn-success" id="taskCompletedButton">Задание выполнено</button>
       </div>
@@ -65,11 +63,12 @@
         </div>
         <div class="modal-body">
           <p id="newTaskRouteName"></p>
-          <p id="newTaskTime"></p>
+          <p id="newTaskDate"></p>
           <p id="newTaskTechOp"></p>
+          <p id="newTaskComment"></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Принять</button>
+          <button type="button" class="btn btn-primary" id="newTaskAcceptButton" data-dismiss="modal">Принять</button>
         </div>
       </div>
     </div>
@@ -77,16 +76,18 @@
 
 	<!-- Google Maps -->
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnIl72FwOWrtgcOeFCvuOf7AvRAmxRYXA&libraries=geometry,drawing"></script>
+	<script src="https://cdn.klokantech.com/maptilerlayer/v1/index.js"></script>
 
 	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+	<script src="/static/moment.js"></script>
 
 	<!-- Bootstrap -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 	<!-- Custom -->
-	<script src="../static/map.js"></script>
-	<script src="../static/task.js"></script>
+	<script src="/static/map.js"></script>
+	<script src="/static/task.js"></script>
 
 </body>
 </html>
