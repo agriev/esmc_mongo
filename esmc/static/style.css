@@ -14,11 +14,9 @@ body {
 }
 
 body {
+  background-color:#343434;
   margin-top:50px;
-}
-
-#login-buttons {
-  display: block;
+  color:#fff;
 }
 
 h1 {
@@ -29,7 +27,7 @@ h1 {
   margin-right: 1em;
 }
 
-ul.tasks {
+/*ul.tasks {
   margin: 0;
   padding: 0;
   background: white;
@@ -89,7 +87,7 @@ header .hide-completed {
   .new-task input {
     padding-bottom: 5px;
   }
-}
+}*/
 
 .container-driver {
   background-color:#343434;
@@ -100,6 +98,9 @@ header .hide-completed {
 }
 .navbar-inverse a {
   color:#fff;
+}
+.navbar {
+  border-bottom-color:#2D2D2D;
 }
 
 .map-container {
